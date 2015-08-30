@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150830142852) do
+ActiveRecord::Schema.define(version: 20150830222750) do
 
   create_table "aikas", force: :cascade do |t|
     t.datetime "aika"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150830142852) do
     t.integer  "aika_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "ip_address"
   end
 
 end

@@ -26,7 +26,7 @@ class OpiskelijasController < ApplicationController
   # POST /opiskelijas.json
   def create
     @opiskelija = Opiskelija.new(opiskelija_params)
-
+    @opiskelija.ip_address = request.remote_ip
     respond_to do |format|
       if @opiskelija.save
         format.html { redirect_to root_path, notice: 'Ilmoittauduit onnistuneesti.' }
