@@ -1,0 +1,2 @@
+module AikasHelper
+end

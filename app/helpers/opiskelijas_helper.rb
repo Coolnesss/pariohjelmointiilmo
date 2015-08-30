@@ -1,0 +1,2 @@
+module OpiskelijasHelper
+end

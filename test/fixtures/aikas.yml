@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  aika: 2015-08-30 17:22:34
+
+two:
+  aika: 2015-08-30 17:22:34

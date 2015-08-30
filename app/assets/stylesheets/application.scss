@@ -1,0 +1,14 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+body {
+  font-family: 'Raleway';
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+h1 {
+  @extend .text-center;
+  font-family: 'Ubuntu';
+}

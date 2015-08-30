@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Opiskelijas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numero</th>
+      <th>Aika</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opiskelijas.each do |opiskelija| %>
+      <tr>
+        <td><%= opiskelija.numero %></td>
+        <td><%= opiskelija.aika_id %></td>
+        <td><%= link_to 'Show', opiskelija %></td>
+        <td><%= link_to 'Edit', edit_opiskelija_path(opiskelija) %></td>
+        <td><%= link_to 'Destroy', opiskelija, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

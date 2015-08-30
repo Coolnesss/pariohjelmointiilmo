@@ -1,0 +1,21 @@
+<%= form_for(@aika) do |f| %>
+  <% if @aika.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@aika.errors.count, "error") %> prohibited this aika from being saved:</h2>
+
+      <ul>
+      <% @aika.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :aika %><br>
+    <%= f.datetime_select :aika %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
