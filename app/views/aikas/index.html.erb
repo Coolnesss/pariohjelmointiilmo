@@ -1,19 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Paja-ajat ilmottautuminen</h1>
+<h1>Ilmoittaudu kyselytunnille</h1>
 
-  <div class="col col-md-10 col-md-offset-1">
+<div class="col col-md-10 col-md-offset-1">
+  <ul class="list">
     <% @aikas.each do |aika| %>
-      <div class="panel panel-default col-md-4">
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= aika.aika %></h3>
-        </div>
-        <div class="panel-body">
-          Ilmoittautujia: <span class="badge"><%= aika.opiskelijas.count %></span>
-          <%= link_to 'Ilmoittaudu', new_opiskelija_path, class: "btn btn-success btn-xs" %>
-        </div>
-      </div>
+    <li class="list-group-item"><%= aika.aika.to_s(:long) %>
+    <span class="badge">Osallistujia: <%= aika.opiskelijas.count %></span>
+    
+    <%= link_to 'Ilmottaudu', new_opiskelija_path, class:"btn btn-xs btn-success" %></li>
     <% end %>
+  </ul>
     <% if logged_in? %>
       <%= link_to 'Uusi Aika', new_aika_path, class:"btn btn-success" %>
     <% end %>

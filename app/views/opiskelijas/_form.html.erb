@@ -1,8 +1,8 @@
+<div class="col col-md-6 col-md-offset-2">
 <%= form_for(@opiskelija) do |f| %>
   <% if @opiskelija.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@opiskelija.errors.count, "error") %> prohibited this opiskelija from being saved:</h2>
-
+      <h2>Ilmoittautumisessa tapahtui virheitä: </h2>
       <ul>
       <% @opiskelija.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,17 +10,17 @@
       </ul>
     </div>
   <% end %>
-  <div class="col col-md-6 col-md-offset-2">
     <div class="field">
       <%= f.label 'Opiskelijanumerosi' %><br>
       <%= f.text_field :numero %>
     </div>
     <div class="field">
       <%= f.label :aika_id %><br>
-      <%= f.collection_select(:aika_id, Aika.order(:aika), :id, :aika, {}, {class: 'form-control'}) %>
+      <%= f.collection_select(:aika_id, Aika.order(:aika), :id, :to_s, {}, {class: 'form-control'}) %>
     </div>
+    <br>
     <div class="actions">
-      <%= f.submit 'Ilmoittaudu' %>
+      <%= f.submit 'Ilmoittaudu', class:"btn btn-default"%>
     </div>
   </div>
 <% end %>
