@@ -7,8 +7,8 @@
     <% @aikas.each do |aika| %>
     <li class="list-group-item"><%= aika.aika.to_s(:long) %>
     <span class="badge">Osallistujia: <%= aika.opiskelijas.count %></span>
-    
-    <%= link_to 'Ilmottaudu', new_opiskelija_path, class:"btn btn-xs btn-success" %></li>
+
+    <%= link_to 'Ilmottaudu', new_opiskelija_path(:aika_id => aika.id), class:"btn btn-xs btn-success" %></li>
     <% end %>
   </ul>
     <% if logged_in? %>

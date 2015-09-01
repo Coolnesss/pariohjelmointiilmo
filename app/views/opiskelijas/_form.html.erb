@@ -16,7 +16,7 @@
     </div>
     <div class="field">
       <%= f.label :aika_id %><br>
-      <%= f.collection_select(:aika_id, Aika.order(:aika), :id, :to_s, {}, {class: 'form-control'}) %>
+      <%= f.collection_select(:aika_id, Aika.order(:aika), :id, :to_s, {:selected => params[:aika_id]}, {class: 'form-control'}) %>
     </div>
     <br>
     <div class="actions">

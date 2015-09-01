@@ -9,7 +9,7 @@ class Opiskelija < ActiveRecord::Base
   }, numericality: { only_integer: true }
 
   def legit_number?
-    errors.add(:numero, "ei ole validi opiskelijanumero") unless Opiskelija.validate_number(self.numero)
+    errors.add(:numero, "Syöttämäsi numero ei ole validi opiskelijanumero") unless Opiskelija.validate_number(self.numero)
   end
 
   def self.validate_number(num)
