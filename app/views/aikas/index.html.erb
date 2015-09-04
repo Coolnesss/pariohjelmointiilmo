@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Ilmoittaudu kyselytunnille</h1>
- <h4 class="text-center">Paikka: <span class="label label-primary">C221</span></h4>
+<h1>Ilmoittaudu pariohjelmointitutkimukseen</h1>
 
 <div class="col col-md-10 col-md-offset-1">
   <ul class="list">
     <% @aikas.each do |aika| %>
     <li class="list-group-item"><%= aika.to_s %>
+    <span class="badge-danger">Maksimi: <%= aika.max %></span>
     <span class="badge">Osallistujia: <%= aika.opiskelijas.count %></span>
 
     <%= link_to 'Ilmottaudu', new_opiskelija_path(:aika_id => aika.id), class:"btn btn-xs btn-success" %></li>

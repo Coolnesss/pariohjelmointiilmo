@@ -12,3 +12,8 @@ h1 {
   @extend .text-center;
   font-family: 'Ubuntu';
 }
+
+.badge-danger {
+  @extend .badge;
+  background-color: red;
+}

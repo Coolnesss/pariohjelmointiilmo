@@ -2,7 +2,8 @@ class Opiskelija < ActiveRecord::Base
   belongs_to :aika
 
   validate :legit_number?, on: :create
-
+  validate :is_less_than_max?, on: :create
+  
   validates :numero, uniqueness: {
     scope: :aika,
     message: "Olet jo ilmoittautunut tähän aikaan."
@@ -10,6 +11,10 @@ class Opiskelija < ActiveRecord::Base
 
   def legit_number?
     errors.add(:numero, "Syöttämäsi numero ei ole validi opiskelijanumero") unless Opiskelija.validate_number(self.numero)
+  end
+
+  def is_less_than_max?()
+    errors.add(:numero, "Aikaan on jo ilmoittautunut maksimimäärä opiskelijoita.") unless self.aika.max > self.aika.opiskelijas.count
   end
 
   def self.validate_number(num)

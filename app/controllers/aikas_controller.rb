@@ -70,6 +70,6 @@ class AikasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def aika_params
-      params.require(:aika).permit(:aika)
+      params.require(:aika).permit(:aika, :max)
     end
 end
