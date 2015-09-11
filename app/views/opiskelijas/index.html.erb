@@ -15,10 +15,8 @@
     <% @opiskelijas.each do |opiskelija| %>
       <tr>
         <td><%= opiskelija.numero %></td>
-        <td><%= opiskelija.aika_id %></td>
-        <td><%= link_to 'Show', opiskelija %></td>
-        <td><%= link_to 'Edit', edit_opiskelija_path(opiskelija) %></td>
-        <td><%= link_to 'Destroy', opiskelija, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td></td>
+        <td><%= opiskelija.aika.aika %></td>
       </tr>
     <% end %>
   </tbody>
