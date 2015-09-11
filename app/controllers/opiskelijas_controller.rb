@@ -5,7 +5,7 @@ class OpiskelijasController < ApplicationController
   # GET /opiskelijas
   # GET /opiskelijas.json
   def index
-    @opiskelijas = Opiskelija.all
+    @opiskelijas = Opiskelija.order(:aika_id)
   end
 
   # GET /opiskelijas/1
