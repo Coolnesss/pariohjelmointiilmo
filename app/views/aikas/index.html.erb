@@ -5,6 +5,13 @@
 <div class="col col-md-10 col-md-offset-1">
   <ul class="list">
     <% @aikas.each do |aika| %>
+    <% if aika.id == 7 %>
+      <li class="list-group-item"><%= aika.to_s %>
+      <span class="badge-danger">Maksimi: <%= aika.max %></span>
+      <span class="badge">Osallistujia: <%= aika.opiskelijas.count %></span>
+      PERUTTU
+      <% next %>
+    <% end %>
     <li class="list-group-item"><%= aika.to_s %>
     <span class="badge-danger">Maksimi: <%= aika.max %></span>
     <span class="badge">Osallistujia: <%= aika.opiskelijas.count %></span>
